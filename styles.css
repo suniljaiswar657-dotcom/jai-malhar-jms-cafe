@@ -333,3 +333,28 @@ body{background:#050707;color:var(--cream);overflow-x:hidden}
 #full-menu .dish-menu-card:hover{transform:translateY(-8px) perspective(1000px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))}
 @keyframes cardArrive{from{opacity:0;translate:0 22px}to{opacity:1;translate:0 0}}
 @media(prefers-reduced-motion:reduce){#full-menu .dish-menu-card.is-visible{animation:none}}
+
+
+/* PERFORMANCE PASS — keep the premium look, reduce mobile GPU work */
+html{scroll-behavior:auto}
+.hero-bg{background-image:url("https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=1600&q=76");transform:none;animation:none}
+.manifesto{background-attachment:scroll}
+.hero-console{backdrop-filter:none;-webkit-backdrop-filter:none;animation:none}
+.console-orbit-ring{animation:none}
+.story-image,.dish-photo,.menu-card-visual,#full-menu .dish-visual{contain:paint}
+.story-image img,.dish-photo img,.menu-card-visual img,#full-menu .dish-visual img{filter:none}
+#full-menu .dish-menu-card{content-visibility:auto;contain-intrinsic-size:auto 390px;box-shadow:0 8px 22px rgba(0,0,0,.24);transition:border-color .2s ease,background-color .2s ease}
+#full-menu .dish-menu-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+#full-menu .dish-menu-card.is-visible{animation:none}
+#full-menu .dish-menu-card:after{display:none}
+.menu-3d-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.story-image{box-shadow:12px 12px 0 rgba(138,212,192,.025),0 18px 40px rgba(0,0,0,.24)}
+@media(max-width:760px){
+ .hero-bg{background-position:62% center}
+ .hero-console{backdrop-filter:none;-webkit-backdrop-filter:none}
+ #full-menu .dish-menu-card{content-visibility:visible;contain-intrinsic-size:auto}
+ #full-menu .dish-menu-card:hover{transform:none;box-shadow:0 8px 22px rgba(0,0,0,.24)}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
