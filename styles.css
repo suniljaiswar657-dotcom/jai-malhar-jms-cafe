@@ -27,3 +27,26 @@
 @media(max-width:900px){.signature-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.menu-card-visual{height:190px}}
 @media(max-width:680px){.signature-cards{grid-template-columns:1fr;gap:18px}.menu-card-visual{height:220px}.menu-card-body{padding:19px}.menu-card-title h3{font-size:23px}.menu-3d-card:hover{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){.menu-3d-card,.menu-card-visual img{transition:none!important}.menu-3d-card:hover{transform:none}}
+
+
+/* MATTE BLACK EDITION — preserve layout, content, imagery and gold accents */
+:root{--bg:#080808;--panel:#101010;--cream:#f2eee7;--muted:#aaa49a;--line:rgba(210,180,120,.19)}
+body{background:#080808}
+.topline{background:#090909;color:var(--gold2);border-bottom:1px solid var(--line)}
+.header{background:rgba(8,8,8,.82);border-bottom-color:rgba(255,255,255,.09)}
+.nav{color:#e5e0d7}
+.hero-overlay{background:linear-gradient(90deg,rgba(0,0,0,.98) 0%,rgba(0,0,0,.91) 42%,rgba(0,0,0,.68) 100%),linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,.12) 55%)}
+.hero-grain{opacity:.07}
+.story,.section-pad{background-color:#080808}
+.experience{background:#0b0b0b;border-color:var(--line)}
+.dish-photo,.menu-card-visual{background:#111}
+.manifesto{background-image:linear-gradient(rgba(0,0,0,.94),rgba(0,0,0,.96)),url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80")}
+.location-card{background:#101010}
+.location-visual{background:#0c0c0c}
+.map-grid{opacity:.22}
+.signature{background:#090909}
+.review-card{background:#101010}
+.signature-cards .menu-3d-card{background:#101010}
+.menu-card-visual:after{background:linear-gradient(0deg,rgba(0,0,0,.82),transparent 65%),linear-gradient(135deg,rgba(201,164,94,.08),transparent 50%)}
+.mobile-whatsapp{background:linear-gradient(110deg,#b88f4b,#e4c987)}
+@media(max-width:680px){.nav{background:rgba(8,8,8,.98)}}
