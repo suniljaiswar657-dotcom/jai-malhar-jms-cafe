@@ -50,7 +50,7 @@ const toggle=document.querySelector(".menu-toggle");const nav=document.querySele
 })();
 
 
-// Immersive 2070 interactions: reading progress + menu reveal + subtle pointer depth
+// Lightweight reading progress indicator
 (()=>{
  const progress=document.querySelector("#reading-progress");
  let ticking=false;
@@ -63,26 +63,5 @@ const toggle=document.querySelector(".menu-toggle");const nav=document.querySele
  };
  window.addEventListener("scroll",()=>{if(!ticking){window.requestAnimationFrame(updateProgress);ticking=true}},{passive:true});
  updateProgress();
- const cards=[...document.querySelectorAll("#full-menu .dish-menu-card")];
- if("IntersectionObserver" in window){
-  const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{
-   if(entry.isIntersecting){entry.target.classList.add("is-visible");reveal.unobserve(entry.target)}
-  }),{rootMargin:"0px 0px -8% 0px",threshold:.08});
-  cards.forEach(card=>reveal.observe(card));
- }else cards.forEach(card=>card.classList.add("is-visible"));
- if(window.matchMedia("(pointer:fine)").matches&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-  document.querySelectorAll("#full-menu .dish-menu-card").forEach(card=>{
-   card.addEventListener("pointermove",event=>{
-    const rect=card.getBoundingClientRect();
-    const x=(event.clientX-rect.left)/rect.width-.5;
-    const y=(event.clientY-rect.top)/rect.height-.5;
-    card.style.setProperty("--tilt-x",(-y*2.2).toFixed(2)+"deg");
-    card.style.setProperty("--tilt-y",(x*2.2).toFixed(2)+"deg");
-   });
-   card.addEventListener("pointerleave",()=>{
-    card.style.removeProperty("--tilt-x");
-    card.style.removeProperty("--tilt-y");
-   });
-  });
- }
+
 })();
