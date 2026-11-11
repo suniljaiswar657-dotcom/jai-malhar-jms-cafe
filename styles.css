@@ -268,3 +268,68 @@ body{background:#050707;color:var(--cream);overflow-x:hidden}
 .mobile-whatsapp{background:linear-gradient(110deg,#8ad4c0,#f0d4a0);color:#07100c;border-radius:2px}
 @keyframes consoleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
 @keyframes orbitSpin{to{rotate:360deg}}
+
+@media(max-width:1100px){.hero-console{right:6vw;width:240px;top:31%}.console-orbit{height:170px}.console-orbit-core{font-size:48px}.hero-inner{max-width:610px}}
+@media(max-width:760px){
+ .topline{height:25px;font-size:6px;letter-spacing:.16em}
+ .header{top:25px;height:70px;padding-inline:6vw}
+ .hero{height:auto;min-height:850px;padding:145px 7vw 350px;align-items:flex-start}
+ .hero-bg{background-position:62% center}
+ .hero-overlay{background:linear-gradient(90deg,rgba(4,8,7,.96),rgba(4,8,7,.77) 62%,rgba(4,8,7,.44)),linear-gradient(0deg,#050707 0%,transparent 60%)}
+ .hero-inner{margin-top:20px}
+ .hero h1{font-size:clamp(63px,15vw,94px);margin:27px 0 20px}
+ .hero-desc{max-width:340px;font-size:11px}
+ .hero-ctas{align-items:flex-start;flex-direction:column;gap:15px}
+ .hero-foot{margin-top:34px;gap:9px;font-size:6px}
+ .hero-orbit{width:105px;height:105px;right:7vw;bottom:24%;opacity:.7}
+ .orbit-center{font-size:29px}.orbit-text{font-size:4px}
+ .hero-console{top:auto;right:7vw;left:7vw;bottom:64px;width:auto;padding:12px 15px;animation:none}
+ .console-orbit{height:105px}.console-orbit:before{width:110px;height:110px}
+ .ring-a{width:95px;height:54px}.ring-b{width:65px;height:105px}
+ .console-orbit-core{font-size:34px}.console-orbit-label{font-size:5px}
+ .label-a{top:12px;left:12px}.label-b{bottom:11px;right:12px}
+ .console-bottom{padding-top:9px}.console-bottom b{font-size:16px}
+ .hero-bottomline{left:7vw;right:7vw;bottom:25px;font-size:5px;gap:9px}
+ .section-pad{padding:82px 7vw}.story{gap:37px}
+ .story:after,.signature:before,.visit:before{top:24px;font-size:6px}
+ .story-image{height:360px}
+ .experience{padding:82px 7vw}.experience-head{display:block;padding-bottom:30px}.experience-head>p{margin-top:15px}
+ .dish-grid{grid-template-columns:1fr 1fr;gap:20px 12px}.dish-large{grid-column:1/-1}
+ .dish-photo,.dish-large .dish-photo{height:220px}.dish h3{font-size:23px}
+ .signature{grid-template-columns:1fr;gap:22px}
+ .signature-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .menu-card-visual{height:160px}.menu-card-body{padding:15px}.menu-card-title h3{font-size:18px}
+ .review-card{grid-template-columns:1fr;gap:13px;padding:23px 18px}
+ .review-card .kicker,.review-card p,.review-actions{grid-column:1;grid-row:auto}
+ .review-actions{width:100%}.review-actions .btn{white-space:normal}
+ .live-menu-section{padding:82px 7vw}
+ #full-menu .live-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ #full-menu .dish-visual{height:clamp(140px,31vw,195px)}
+ #full-menu .dish-card-main{padding:14px 12px 12px;gap:11px}
+ #full-menu .dish-card-copy h3{font-size:17px}#full-menu .dish-price{font-size:11px}
+ #full-menu .dish-card-bottom{margin:0 12px;padding:11px 0 13px;align-items:flex-start;flex-direction:column;gap:7px}
+ #full-menu .dish-card-note{font-size:6px}#full-menu .dish-card-bottom a{font-size:8px}
+ #full-menu .menu-control-panel{padding:13px}#full-menu .menu-filter{padding:9px 11px;font-size:7px}
+ #full-menu .menu-editorial-head h2{font-size:clamp(47px,12vw,70px)}
+ .manifesto{padding:90px 7vw;background-attachment:scroll}
+ .visit{grid-template-columns:1fr;gap:35px}.location-visual{height:205px}
+ .footer{padding:25px 7vw 85px}
+}
+@media(max-width:420px){
+ .hero{min-height:820px;padding-bottom:340px}.hero h1{font-size:62px}
+ .hero-foot span:last-child{display:none}
+ .dish-grid{grid-template-columns:1fr}.dish-large{grid-column:auto}
+ .dish-photo,.dish-large .dish-photo{height:235px}
+ .signature-cards{grid-template-columns:1fr 1fr}
+ .menu-card-visual{height:135px}.menu-card-body{padding:12px}.menu-card-title h3{font-size:16px}
+ #full-menu .live-menu-grid{grid-template-columns:1fr 1fr}
+ #full-menu .dish-visual{height:132px}
+ #full-menu .dish-card-copy h3{font-size:15px}
+ #full-menu .dish-card-main{padding:12px 10px 10px}
+ #full-menu .dish-card-bottom{margin-inline:10px}
+}
+@media(prefers-reduced-motion:reduce){.hero-console,.console-orbit-ring{animation:none!important}#reading-progress{display:none}}
+#full-menu .dish-menu-card.is-visible{animation:cardArrive .65s cubic-bezier(.2,.75,.2,1) both}
+#full-menu .dish-menu-card:hover{transform:translateY(-8px) perspective(1000px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))}
+@keyframes cardArrive{from{opacity:0;translate:0 22px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:reduce){#full-menu .dish-menu-card.is-visible{animation:none}}
